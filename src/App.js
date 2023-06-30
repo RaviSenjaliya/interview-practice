@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import Axios from "./API/Axios";
+import Fatch from "./API/Fatch";
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CRUDform from "./Form/CRUDform";
+import FormBase from "./Form/FormBase";
+import LoginPage from "./log-in/LoginPage";
+import RegistrationPage from "./log-in/RegistrationPage";
+import Auth from "./log-in/Auth";
+import Homepage from "./log-in/Homepage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* ===========================[API]====================================================== */}
+      {/* <Axios /> */}
+      {/* <Fatch /> */}
+      {/* ===========================[Form]====================================================== */}
+      {/* <FormBase /> */}
+      <CRUDform />
+      {/* ===========================[Login/registration]========================================= */}
+      {/* <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/registrationPage" element={<RegistrationPage />} />
+          <Route
+            path="/home"
+            element={
+              <Auth>
+                <Homepage />
+              </Auth>
+            }
+          />
+        </Routes>
+      </BrowserRouter> */}
+    </>
   );
 }
 
