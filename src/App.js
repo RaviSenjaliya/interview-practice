@@ -8,6 +8,7 @@ import LoginPage from "./log-in/LoginPage";
 import RegistrationPage from "./log-in/RegistrationPage";
 import Auth from "./log-in/Auth";
 import Homepage from "./log-in/Homepage";
+import ShowData from "./CRUD/ShowData";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       {/* <Fatch /> */}
       {/* ===========================[Form]====================================================== */}
       {/* <FormBase /> */}
-      <CRUDform />
+      {/* <CRUDform /> */}
       {/* ===========================[Login/registration]========================================= */}
       {/* <BrowserRouter>
         <Routes>
@@ -33,6 +34,8 @@ function App() {
           />
         </Routes>
       </BrowserRouter> */}
+      {/* ===========================[API CRUD]============================================== */}
+      <ShowData />
     </>
   );
 }

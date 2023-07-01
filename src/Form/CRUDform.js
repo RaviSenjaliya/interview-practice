@@ -13,22 +13,29 @@ const CRUDform = () => {
   const [data, setdata] = useState([]);
   const [add, setadd] = useState(-1);
   const [search, setsearch] = useState("");
-  // ========================Delete=======================
-  const Mydelete = (index) => {
-    let maindata = [...data];
-    maindata.splice(index, 1);
-    setdata(maindata);
-  };
+
   // ========================Search=======================
+
   const mySearch = (e) => {
     setsearch(e.target.value);
   };
-  // ========================Edit=======================
+
+  // ========================Delete=======================
+
+  const Mydelete = (index) => {
+    let dele = [...data];
+    dele.splice(index, 1);
+    setdata(dele);
+  };
+
+  // ========================Data Edit=======================
+
   const Myedit = (index) => {
-    let maindata = data[index];
-    setitem(maindata);
+    let Edit = data[index];
+    setitem(Edit);
     setadd(index);
   };
+
   // ========================Handler=======================
   const myHandler = (e) => {
     setitem({ ...item, [e.target.name]: e.target.value });
@@ -36,6 +43,7 @@ const CRUDform = () => {
   // ========================Submit=======================
   const Mysubmit = (s) => {
     s.preventDefault();
+    //niche add karvamate
 
     if (add >= 0) {
       let r = [...data];

@@ -21,7 +21,6 @@ export default function LoginPage() {
       .then((v) => {
         localStorage.setItem("allUser", JSON.stringify(v.data));
         console.log(v.data);
-        alert("done.....");
         mynav("/home");
       })
       .catch((v) => {
