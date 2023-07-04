@@ -1,6 +1,8 @@
+import "./App.css";
+import { Provider } from "react-redux";
+import store from "./Redux/Store";
 import Axios from "./API/Axios";
 import Fatch from "./API/Fatch";
-import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CRUDform from "./Form/CRUDform";
 import FormBase from "./Form/FormBase";
@@ -9,6 +11,9 @@ import RegistrationPage from "./log-in/RegistrationPage";
 import Auth from "./log-in/Auth";
 import Homepage from "./log-in/Homepage";
 import ShowData from "./CRUD/ShowData";
+import INDC from "./Redux/INDC";
+import StoreTool from "./ReduxToolkit/Store";
+import INDCtool from "./ReduxToolkit/INDCtool";
 
 function App() {
   return (
@@ -35,7 +40,16 @@ function App() {
         </Routes>
       </BrowserRouter> */}
       {/* ===========================[API CRUD]============================================== */}
-      <ShowData />
+      {/* <ShowData /> */}
+      {/* ===========================[Redux]============================================== */}
+      {/* <Provider store={store}>
+        <INDC />
+      </Provider> */}
+      {/* ===========================[Redux Toolkit]============================================== */}
+
+      <Provider store={StoreTool}>
+        <INDCtool />
+      </Provider>
     </>
   );
 }

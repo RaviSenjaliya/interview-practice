@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function RegistrationPage() {
   const [Data, setData] = useState({
@@ -32,7 +33,15 @@ export default function RegistrationPage() {
   };
 
   return (
-    <div className="w-50 ">
+    <div
+      style={{
+        margin: "auto",
+        width: "50%",
+        marginTop: "50px",
+        border: "5px solid black",
+      }}
+      className="rounded-4 p-3"
+    >
       <form onSubmit={mysub}>
         <TextField
           label="title"
@@ -82,6 +91,11 @@ export default function RegistrationPage() {
           className="btn btn-danger mt-4  form-control"
           value="Submit"
         />
+        <Link to={"/"}>
+          <p className="mt-2">
+            <span className="text-danger ">Log-in now</span>
+          </p>
+        </Link>
       </form>
     </div>
   );

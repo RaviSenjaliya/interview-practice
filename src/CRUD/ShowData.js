@@ -65,7 +65,7 @@ export default function ShowData() {
   //===================[delete]========================================
 
   const handleDeleteClick = (data) => {
-    console.log(data.id);
+    console.log(data.row._id);
     Swal.fire({
       title: "Do you want to Delete?",
       showCancelButton: true,
@@ -73,7 +73,7 @@ export default function ShowData() {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:8080/api/tutorials/${data.id}`)
+          .delete(`http://localhost:8080/api/tutorials/${data.row._id}`)
           .then((r) => {
             mydata();
           });
